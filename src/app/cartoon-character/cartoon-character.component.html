@@ -7,6 +7,7 @@
     <th>Occupation</th>
     <th>Gender</th>
     <th>Picture</th>
+    <th></th>
   </tr>
   </thead>
   <tbody>
@@ -18,6 +19,7 @@
     <td>{{c.Gender}}</td>
     <td><img src="{{c.Picture}}"
              alt="{{c.FirstName}} {{c.LastName}}" /></td>
+    <td><button class="delete" (click)="delete(c); $event.stopPropagation()">x</button></td>
   </tr>
   </tbody>
 </table>
@@ -31,4 +33,15 @@
     {{selected.FirstName | uppercase}} {{selected.LastName | uppercase}} is favorite cartoon character.
   </h2>
   <button (click)="gotoDetail()">View Details</button>
+</div>
+
+<div>
+  <p><label>First Name: </label><input [(ngModel)]="newCharacter.FirstName" placeholder="First Name"></p>
+  <p><label>Last Name: </label><input [(ngModel)]="newCharacter.LastName" placeholder="Last Name"></p>
+  <p><label>Occupation: </label><input [(ngModel)]="newCharacter.Occupation" placeholder="Occupation"></p>
+  <p><label>Gender: </label><input [(ngModel)]="newCharacter.Gender" placeholder="M or F"></p>
+  <p><label>Picture: </label><input [(ngModel)]="newCharacter.Picture" placeholder="Picture URL"></p>
+  <button (click)="add(newCharacter);">
+    Add
+  </button>
 </div>

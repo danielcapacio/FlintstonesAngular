@@ -33,4 +33,8 @@ export class CharacterDetailComponent implements OnInit {
     this.location.back();
   }
 
+  save(): void {
+    this.cartoonService.update(this.character)
+      .then(() => this.goBack());
+  }
 }
