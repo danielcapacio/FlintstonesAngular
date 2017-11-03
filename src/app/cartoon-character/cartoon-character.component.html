@@ -22,4 +22,13 @@
   </tbody>
 </table>
 
+<!--
 <app-character-detail [character]="selected"></app-character-detail>
+-->
+
+<div *ngIf="selected">
+  <h2>
+    {{selected.FirstName | uppercase}} {{selected.LastName | uppercase}} is favorite cartoon character.
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

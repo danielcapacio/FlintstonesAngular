@@ -11,4 +11,8 @@ export class CartoonCharacterService {
     return Promise.resolve(DUMMY_DATA);
   }
 
+  getCartoonCharacterById(id: number): Promise<CartoonCharacter> {
+    return this.getCartoonCharacters()
+      .then(result => result.find(character => character.PersonId === id));
+  }
 }
